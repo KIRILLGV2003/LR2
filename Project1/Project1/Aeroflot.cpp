@@ -41,3 +41,23 @@ void AEROFLOT::setFlightNumber(int flightNumber) {
 void AEROFLOT::setAircraftType(const std::string& aircraftType) {
     this->aircraftType = aircraftType;
 }
+
+// Реализация перегруженных операций извлечения и вставки
+std::ostream& operator<<(std::ostream& os, const AEROFLOT& aeroflot) {
+    os << "Destination: " << aeroflot.destination << ", Flight Number: "
+        << aeroflot.flightNumber << ", Aircraft Type: " << aeroflot.aircraftType;
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, AEROFLOT& aeroflot) {
+    std::cout << "Enter destination: ";
+    is >> aeroflot.destination;
+
+    std::cout << "Enter flight number: ";
+    is >> aeroflot.flightNumber;
+
+    std::cout << "Enter aircraft type: ";
+    is >> aeroflot.aircraftType;
+
+    return is;
+}

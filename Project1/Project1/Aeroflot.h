@@ -16,6 +16,10 @@ public:
     int getFlightNumber() const;
     const std::string& getAircraftType() const;
 
+    // ѕерегруженные операции извлечени€ и вставки
+    friend std::ostream& operator<<(std::ostream& os, const AEROFLOT& aeroflot);
+    friend std::istream& operator>>(std::istream& is, AEROFLOT& aeroflot);
+
     void setDestination(const std::string& destination);
     void setFlightNumber(int flightNumber);
     void setAircraftType(const std::string& aircraftType);
