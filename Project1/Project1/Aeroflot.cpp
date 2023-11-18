@@ -61,3 +61,13 @@ std::istream& operator>>(std::istream& is, AEROFLOT& aeroflot) {
 
     return is;
 }
+
+// Реализация перегрузки оператора присваивания
+AEROFLOT& AEROFLOT::operator=(const AEROFLOT& other) {
+    if (this != &other) {
+        destination = other.destination;
+        flightNumber = other.flightNumber;
+        aircraftType = other.aircraftType;
+    }
+    return *this;
+}

@@ -24,6 +24,7 @@ public:
     void setFlightNumber(int flightNumber);
     void setAircraftType(const std::string& aircraftType);
 
+    AEROFLOT& operator=(const AEROFLOT& other);
 private:
     std::string destination;
     int flightNumber;
